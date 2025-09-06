@@ -11,22 +11,23 @@
 <body class="bg-gray-100 font-sans">
     <div class="max-w-4xl mx-auto p-6 mt-10">
         <!-- Tab buttons -->
-        <div class="flex gap-4">
-            <button id="tab-todos"
-                class="py-2 px-4 text-lg font-medium rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all duration-200 active:bg-blue-500 active:text-white">
-                Todos <span id="todos-count" class="ml-2 text-sm text-gray-700"></span>
-            </button>
-            <button id="tab-produtivo"
-                class="py-2 px-4 text-lg font-medium rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all duration-200">
-                Produtivo <span id="produtivo-count" class="ml-2 text-sm text-gray-700"></span>
-            </button>
-            <button id="tab-improdutivo"
-                class="py-2 px-4 text-lg font-medium rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all duration-200">
-                Improdutivo <span id="improdutivo-count" class="ml-2 text-sm text-gray-700"></span>
-            </button>
-
+        <div class="flex justify-between">
+            <div>
+                <button id="tab-todos"
+                    class="py-2 px-4 text-lg font-medium rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all duration-200 active:bg-blue-500 active:text-white">
+                    Todos <span id="todos-count" class="ml-2 text-sm text-gray-700"></span>
+                </button>
+                <button id="tab-produtivo"
+                    class="py-2 px-4 text-lg font-medium rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all duration-200">
+                    Produtivo <span id="produtivo-count" class="ml-2 text-sm text-gray-700"></span>
+                </button>
+                <button id="tab-improdutivo"
+                    class="py-2 px-4 text-lg font-medium rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all duration-200">
+                    Improdutivo <span id="improdutivo-count" class="ml-2 text-sm text-gray-700"></span>
+                </button>
+            </div>
             <button id="openModalBtn"
-                class="py-2 px-4 text-lg font-medium rounded-md text-gray-700 hover:bg-gray-300 ml-20 text-white bg-gradient-to-r from-blue-600 to-blue-500">
+                class="py-2 px-4 text-lg font-medium rounded-md text-gray-700 hover:bg-gray-300 text-white bg-gradient-to-r from-blue-600 to-blue-500">
                 Carregar emails
             </button>
         </div>
