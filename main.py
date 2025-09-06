@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
 import json
 import PyPDF2
@@ -8,7 +8,7 @@ load_dotenv()
 from ai_models import model
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='public')
 CORS(app)
 
 
@@ -32,6 +32,12 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf'}
 # Helper function to check file extension
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 
 # Route for uploading a .txt or .pdf file (in-memory)
 @app.route('/upload', methods=['POST'])
