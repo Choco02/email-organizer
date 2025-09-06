@@ -44,7 +44,7 @@ async function sendData(formData) {
     }, timeout);
 
     try {
-        const response = await fetch('http://localhost:5000/upload', {
+        const response = await fetch('/upload', {
             method: 'POST',
             body: formData,
             // 3. Associa o sinal do controlador à requisição fetch

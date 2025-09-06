@@ -5,7 +5,7 @@ import PyPDF2
 from dotenv import load_dotenv
 load_dotenv()
 
-from ai_models import model
+from .ai_models import model
 
 
 app = Flask(__name__, static_folder='public')
@@ -33,15 +33,23 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf'}
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+@app.route('/hello')
+@app.route('/api/hello')
+def world():
+    return "oi"
+
 
 @app.route('/')
 def index():
+    print('Entrou no /')
     return render_template('index.html')
 
 
 # Route for uploading a .txt or .pdf file (in-memory)
 @app.route('/upload', methods=['POST'])
+@app.route('/api/upload', methods=['POST'])
 def upload_file():
+    print('Entrou no /upload')
     if 'file' not in request.files:
         return jsonify({'error': 'No file part'}), 400
 
@@ -90,6 +98,7 @@ def upload_file():
 
 # Route for receiving text and an optional file (any type, in-memory)
 @app.route('/reply', methods=['POST'])
+@app.route('/api/reply', methods=['POST'])
 def reply():
     text = request.form.get('text')
 
