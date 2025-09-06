@@ -15,7 +15,7 @@ vai apresentar os dados no seguinte formato JSON onde terá um campo emails no f
             "content": "conteúdo original do email", 
             "date": "horário de recebimento do email em ISODate string", 
             "category": "se o email é produtivo ou improdutivo", 
-            "files": [ "lista de arquivos em base64 caso tenha" ], 
+            "files": [ { "name": "Nome do arquivo caso tenha", "content": "base64 do arquivo caso tenha", "content_type": "O mime type do arquivo caso tenha"  } ], 
             "suggested_reply": "aqui vai ser a sugestão da sua resposta para esse email levando em conta todos os detalhes e a classificação do email"
         }
     ]
