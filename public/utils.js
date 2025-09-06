@@ -80,7 +80,7 @@ function createAccordionItem(data, renderCategoryLabel) {
 
     // Textarea for reply
     const replyTextarea = document.createElement('textarea');
-    replyTextarea.classList.add('w-full', 'p-4', 'border', 'rounded-md', 'bg-gray-50', 'resize-none', 'focus:outline-none', 'focus:ring-2', 'focus:ring-blue-500');
+    replyTextarea.classList.add('w-full', 'p-4', 'border', 'rounded-md', 'bg-gray-100', 'resize-none', 'focus:outline-none', 'focus:ring-2', 'focus:ring-blue-500');
     replyTextarea.rows = 4;
     replyTextarea.value = data.suggested_reply;
     replySection.appendChild(replyTextarea);
