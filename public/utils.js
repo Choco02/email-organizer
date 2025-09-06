@@ -57,6 +57,23 @@ function createAccordionItem(data, renderCategoryLabel) {
         replySection.classList.toggle('hidden');
     });
 
+    data.files.forEach(f => {
+        const fileReceived = downloadFileFromBase64(f.content, f.name, f.content_type)
+        fileReceived.classList.add('text-blue-600', 'text-sm', 'font-semibold')
+
+        const attachmentLabel = document.createElement('p')
+        const attachmentContainer = document.createElement('div')
+
+        attachmentContainer.classList.add('mt-2', 'flex', 'gap-2')
+
+        attachmentLabel.textContent = 'Anexos'
+        attachmentLabel.classList.add('text-sm')
+
+        attachmentContainer.appendChild(attachmentLabel)
+        attachmentContainer.appendChild(fileReceived)
+        accordionContent.appendChild(attachmentContainer)
+    })
+
     // Create reply section with textarea and reply button
     const replySection = document.createElement('div');
     replySection.classList.add('mt-4', 'space-y-4', 'hidden'); // Initially hidden
@@ -215,3 +232,28 @@ function changeTabContent(tabId) {
     // Create content for the selected tab
     createTabContent(tabId);
 }
+
+
+function downloadFileFromBase64(base64String, fileName, mimeType) {
+    // 1. Decodifique a string base64
+    const byteCharacters = atob(base64String);
+    const byteNumbers = new Array(byteCharacters.length);
+    for (let i = 0; i < byteCharacters.length; i++) {
+        byteNumbers[i] = byteCharacters.charCodeAt(i);
+    }
+    const byteArray = new Uint8Array(byteNumbers);
+
+    // 2. Crie um Blob com o tipo MIME correto
+    const blob = new Blob([byteArray], { type: mimeType });
+
+    // 3. Crie uma URL de Objeto
+    const url = URL.createObjectURL(blob);
+
+    // 4. Crie um link de download
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = fileName;
+    link.textContent = fileName
+    return link
+}
+
