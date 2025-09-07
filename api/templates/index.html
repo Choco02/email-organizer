@@ -14,15 +14,15 @@
         <div class="flex justify-between">
             <div>
                 <button id="tab-todos"
-                    class="py-2 px-4 text-lg font-medium rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all duration-200 active:bg-blue-500 active:text-white">
+                    class="py-2 px-4 text-lg font-medium rounded-md bg-gray-200 text-gray-700 hover:bg-transparent hover:text-blue-500 transition-all duration-200 active:bg-blue-500 active:text-white">
                     Todos <span id="todos-count" class="ml-2 text-sm text-gray-700"></span>
                 </button>
                 <button id="tab-produtivo"
-                    class="py-2 px-4 text-lg font-medium rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all duration-200">
+                    class="py-2 px-4 text-lg font-medium rounded-md bg-gray-200 text-gray-700 hover:bg-transparent hover:text-blue-500 transition-all duration-200">
                     Produtivo <span id="produtivo-count" class="ml-2 text-sm text-gray-700"></span>
                 </button>
                 <button id="tab-improdutivo"
-                    class="py-2 px-4 text-lg font-medium rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all duration-200">
+                    class="py-2 px-4 text-lg font-medium rounded-md bg-gray-200 text-gray-700 hover:bg-transparent hover:text-blue-500 transition-all duration-200">
                     Improdutivo <span id="improdutivo-count" class="ml-2 text-sm text-gray-700"></span>
                 </button>
             </div>
@@ -75,9 +75,9 @@
         </div>
     </div>
 
-    <!-- <script src="utils.js"></script> -->
-    <!-- <script src="listeners.js"></script> -->
-    <!-- <script src="main.js"></script> -->
+    <!-- <script src="/api/public/utils.js"></script> -->
+    <!-- <script src="/api/public/listeners.js"></script> -->
+    <!-- <script src="/api/public/main.js"></script> -->
      <script src="{{ url_for('static', filename='utils.js') }}"></script>
      <script src="{{ url_for('static', filename='listeners.js') }}"></script>
      <script src="{{ url_for('static', filename='main.js') }}"></script>
