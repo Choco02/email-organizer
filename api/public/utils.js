@@ -203,8 +203,17 @@ function createTabContent(tabId) {
     // Create the accordions for each filtered item
     filteredItems.forEach(item => {
         const accordionItem = createAccordionItem(item, tabId === "todos");
+        contentContainer.classList.remove('flex', 'justify-center')
         contentContainer.appendChild(accordionItem);
     });
+
+    if (filteredItems.length < 1) {
+        const emptyTabLabel = document.createElement('p')
+        emptyTabLabel.textContent = 'Sem emails para exibir, clique no botão para carregar'
+        emptyTabLabel.classList.add('text-lg', 'text-blue-500', 'font-semibold')
+        contentContainer.classList.add('flex', 'justify-center')
+        contentContainer.appendChild(emptyTabLabel)
+    }
 }
 
 
