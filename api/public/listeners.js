@@ -9,6 +9,7 @@ const fileInput = document.getElementById('fileInput');
 const fileEmailsInput = document.getElementById("fileEmailsInput");
 const fileEmailsInputContainer = document.getElementById("fileEmailsInputContainer");
 const searchInput = document.getElementById('searchInput');
+const clearEmailsBtn = document.getElementById('clearEmailsBtn');
 
 let filterText = '';
 
@@ -53,6 +54,11 @@ fileEmailsInputContainer.addEventListener("drop", (e) => {
 
 searchInput.addEventListener('input', (e) => {
     filterText = e.target.value;
+    createTabContent('todos');
+});
+
+clearEmailsBtn.addEventListener('click', () => {
+    clearData();
     createTabContent('todos');
 });
 

@@ -9,6 +9,8 @@ function clearData() {
     tabData.todos = []
     tabData.produtivo = []
     tabData.improdutivo = []
+
+    updateTabCounts();
 }
 
 
