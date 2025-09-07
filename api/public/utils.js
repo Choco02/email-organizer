@@ -201,7 +201,11 @@ function createTabContent(tabId) {
     }
 
     // Create the accordions for each filtered item
-    filteredItems.forEach(item => {
+    filteredItems.filter(
+        item => filterText.length < 1 ||
+            item.content.toLowerCase()
+                .includes(filterText.toLowerCase())
+    ).forEach(item => {
         const accordionItem = createAccordionItem(item, tabId === "todos");
         contentContainer.classList.remove('flex', 'justify-center')
         contentContainer.appendChild(accordionItem);

@@ -8,6 +8,9 @@ const messageText = document.getElementById('messageText');
 const fileInput = document.getElementById('fileInput');
 const fileEmailsInput = document.getElementById("fileEmailsInput");
 const fileEmailsInputContainer = document.getElementById("fileEmailsInputContainer");
+const searchInput = document.getElementById('searchInput');
+
+let filterText = '';
 
 fileEmailsInputContainer.addEventListener("click", () => {
     // fileEmailsInput.click();
@@ -47,6 +50,11 @@ fileEmailsInputContainer.addEventListener("drop", (e) => {
         filenameInputEmails.classList.remove("hidden")
     }
 })
+
+searchInput.addEventListener('input', (e) => {
+    filterText = e.target.value;
+    createTabContent('todos');
+});
 
 // Open the modal
 openModalBtn.addEventListener('click', function () {
