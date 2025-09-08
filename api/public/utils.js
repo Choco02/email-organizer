@@ -213,7 +213,7 @@ function createTabContent(tabId) {
 
     if (filteredItems.length < 1) {
         const emptyTabLabel = document.createElement('p')
-        emptyTabLabel.textContent = 'Sem emails para exibir, clique no botão para carregar'
+        emptyTabLabel.textContent = 'Classifique seus e-mails entre mais importante (produtivo) e menos importante (improdutivo)'
         emptyTabLabel.classList.add('text-lg', 'text-blue-500', 'font-semibold')
         contentContainer.classList.add('flex', 'justify-center')
         contentContainer.appendChild(emptyTabLabel)
