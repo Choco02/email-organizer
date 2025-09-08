@@ -14,3 +14,4 @@ Mude o nome do arquivo `.env.example` para `.env` e preencha o GEMINI_API_KEY co
 # Possíveis dúvidas
 - Onde posso ver a aplicação rodando? https://eeemail.vercel.app/
 - Como faço pra usar outro model? Crie um arquivo com o nome que você quiser na pasta ai_models, por exemplo openai, faça lá a função ask que vai receber uma string e que vai repassar para o prompt do modelo e o retorno dessa função vai devolver o resultado para a função ask, depois só mudar no arquivo model.py de qual arquivo tá sendo importado a função ask. Não esquecer de configurar possíveis variáveis de ambiente e importar o instructions_pt para o prompt inicial do modelo
+- Tem algum arquivo pra testar? Você pode pedir pra alguma IA gerar pra você uma lista de e-mails numa string única ou usar esse arquivo [emails.txt](https://github.com/user-attachments/files/22201075/emails.txt)
